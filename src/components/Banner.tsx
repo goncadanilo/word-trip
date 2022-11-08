@@ -1,6 +1,11 @@
-import { Flex, Stack, Text } from "@chakra-ui/react";
+import { Flex, Image, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 
 export function Banner() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Flex
       w="100vw"
@@ -11,6 +16,7 @@ export function Banner() {
       h={["40", "100%"]}
       maxH={335}
       bgImage="url('/images/banner.png')"
+      bgSize="cover"
     >
       <Stack spacing={["2", "5"]}>
         <Text fontSize={["xl", "4xl"]} color="gray.50">
@@ -20,6 +26,10 @@ export function Banner() {
           Chegou a hora de tirar do papel a viagem que você sempre sonhou.
         </Text>
       </Stack>
+
+      {isWideVersion && (
+        <Image src="/images/airplane.svg" alt="Airplane" mt="28" />
+      )}
     </Flex>
   );
 }
