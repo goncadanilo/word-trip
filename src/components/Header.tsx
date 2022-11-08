@@ -4,7 +4,7 @@ export function Header() {
   return (
     <Flex
       as="header"
-      w="100%"
+      w="100vw"
       h={["12", "24"]}
       p={["0.5", "1"]}
       align="center"
