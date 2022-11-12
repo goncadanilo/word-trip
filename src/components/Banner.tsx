@@ -20,7 +20,7 @@ export function Banner() {
     >
       <Stack spacing={["2", "5"]}>
         <Text fontSize={["xl", "4xl"]} color="gray.50">
-          5 Continentes, <br /> infinitas possibilidades.
+          6 Continentes, <br /> infinitas possibilidades.
         </Text>
         <Text fontSize={["sm", "xl"]} maxW={[300, 500]} color="gray.100">
           Chegou a hora de tirar do papel a viagem que você sempre sonhou.

@@ -1,4 +1,5 @@
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Flex, Image, Link as ChakraLink, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -6,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { continents } from "./data";
+import { continents } from "../../mock/continents";
 
 export function Slides() {
   return (
@@ -23,7 +24,7 @@ export function Slides() {
       >
         {continents.map((continent) => (
           <>
-            <SwiperSlide color="yellow.500">
+            <SwiperSlide>
               <Image
                 position="absolute"
                 src={continent.image}
@@ -31,17 +32,23 @@ export function Slides() {
                 filter="auto"
                 brightness="50%"
               />
-              <Text
+              <ChakraLink
                 position="absolute"
-                color="gray.50"
-                fontSize={["2xl", "5xl"]}
-                fontWeight="bold"
+                _hover={{ textDecoration: "none" }}
               >
-                {continent.name}
-                <Text color="gray.50" fontSize={["sm", "2xl"]}>
-                  {continent.description}
-                </Text>
-              </Text>
+                <Link href="/continent/europa">
+                  <Text
+                    color="gray.50"
+                    fontSize={["2xl", "5xl"]}
+                    fontWeight="bold"
+                  >
+                    {continent.name}
+                    <Text color="gray.50" fontSize={["sm", "2xl"]}>
+                      {continent.description}
+                    </Text>
+                  </Text>
+                </Link>
+              </ChakraLink>
             </SwiperSlide>
           </>
         ))}
